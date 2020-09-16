@@ -6,8 +6,8 @@ from pysdot import PowerDiagram
 from pysdot import OptimalTransport
 from pysdot.domain_types import ConvexPolyhedraAssembly
 from pysdot.radial_funcs import RadialFuncInBall
-from OTransport import dist_noncongested
-from OTransport import proj_noncongested
+from Hard_congestion import dist_noncongested
+from Hard_congestion import proj_noncongested
 from Trajectories import Trajectories
 import os
 
