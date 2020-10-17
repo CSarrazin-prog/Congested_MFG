@@ -67,10 +67,7 @@ X,Y = np.meshgrid(np.linspace(0.3,7.7,nb_players_x),
 positions_init = np.zeros((nb_players,2))
 positions_init[:,0] = X.flatten()
 positions_init[:,1] = Y.flatten()
-#positions_init=np.random.rand(nb_players, 2)
-#positions_init=np.ones([nb_players,2])+6.5*positions_init
 
-"""The starting positions are randomly generated. To obtain the trajectories of my article, load the numpy array data/starting_pos.npy, in the Example file, into positions_init."""
 
 situation_init=Situation_Init(positions=positions_init, mass=mass)
 initial_guess=Trajectories(situation_init=situation_init)

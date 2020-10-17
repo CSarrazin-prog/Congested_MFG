@@ -32,11 +32,6 @@ def potential_infinity(x):
     result[1:]= radius*2
     return result
 
-def potential_total(x):
-    pot_inf=potential_infinity(x)
-    pot_c=potential_circ(x)
-    return pot_inf+pot_c
-
 
 nb_double = 6
 time = 15
@@ -49,9 +44,6 @@ epsilon=0.01
 radial_func=RadialFuncInBall()
 center=None
 
-
-#positions_init=np.random.rand(nb_players, 2)
-#positions_init=4*positions_init
 
 X,Y = np.meshgrid(np.linspace(0,3.5,nb_players_x),
                   np.linspace(0,3.5,nb_players_y))

@@ -11,8 +11,6 @@ from Hard_congestion import proj_noncongested
 from Trajectories import Trajectories
 import os
 
-"""test"""
-
 class Energy:
     def __init__(self, domain, radial_func= None, epsilon=1, time=1, lagrangian=lambda x:np.array([np.sum(x**2)/2,x[0],x[1]]), potential_t=None, potential_fin=None):
         self.lagrangian=lagrangian
