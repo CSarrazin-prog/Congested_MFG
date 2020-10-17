@@ -1,6 +1,7 @@
 *
 !.gitignore
 !Energy.py
+!Trajectories.py
 !Example_convex.py
 !Example_non_convex.py
 !Hard_congestion.py
