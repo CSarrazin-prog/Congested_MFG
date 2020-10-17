@@ -41,7 +41,7 @@ hfmOutput = hfmInput.Run()
 
 
 
-Spline = sinter.SmoothBivariateSpline(X.flatten(),Y.flatten(), hfmOutput['values'].flatten())
+Spline = sinter.SmoothBivariateSpline(X.flatten(),Y.flatten(), hfmOutput['values'].flatten(), s=10)
         
 def potential_t(x):
     return np.zeros(3)
@@ -53,16 +53,22 @@ def potential_fin(x):
 
 nb_double = 8
 time = 600
-nb_players=400
+nb_players_x=20 
+nb_players_y=20
+nb_players=nb_players_y*nb_players_x
 dimension=2
 mass=50*np.ones(nb_players)/nb_players
 epsilon=.1
 radial_func=RadialFuncInBall()
 center=None
 
-
-positions_init=np.random.rand(nb_players, 2)
-positions_init=np.ones([nb_players,2])+6.5*positions_init
+X,Y = np.meshgrid(np.linspace(0.3,7.7,nb_players_x),
+                  np.linspace(0.3,7.7,nb_players_y))
+positions_init = np.zeros((nb_players,2))
+positions_init[:,0] = X.flatten()
+positions_init[:,1] = Y.flatten()
+#positions_init=np.random.rand(nb_players, 2)
+#positions_init=np.ones([nb_players,2])+6.5*positions_init
 
 """The starting positions are randomly generated. To obtain the trajectories of my article, load the numpy array data/starting_pos.npy, in the Example file, into positions_init."""
 

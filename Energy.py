@@ -126,7 +126,7 @@ class Energy:
             
             
         if solver=="sopt.minimize":
-            options={'iprint': 10, 'maxfun': 5000, 'maxiter': 5000, 'maxls':50}
+            options={'iprint': 10, 'maxfun': 5000, 'maxiter': 5000, 'maxls':50, 'maxcor':20}
             lb=self.domain.min_position()
             up=self.domain.max_position()
             bounds_tab=np.zeros([trajectories_flat.shape[0],2])

@@ -50,14 +50,14 @@ radial_func=RadialFuncInBall()
 center=None
 
 
-positions_init=np.random.rand(nb_players, 2)
-positions_init=4*positions_init
+#positions_init=np.random.rand(nb_players, 2)
+#positions_init=4*positions_init
 
-#X,Y = np.meshgrid(np.linspace(0,3.5,nb_players_x),
-#                  np.linspace(0,3.5,nb_players_y))
-#positions_init = np.zeros((nb_players,2))
-#positions_init[:,0] = X.flatten()
-#positions_init[:,1] = Y.flatten() 
+X,Y = np.meshgrid(np.linspace(0,3.5,nb_players_x),
+                  np.linspace(0,3.5,nb_players_y))
+positions_init = np.zeros((nb_players,2))
+positions_init[:,0] = X.flatten()
+positions_init[:,1] = Y.flatten() 
 
 situation_init=Situation_Init(positions=positions_init, mass=mass)
 initial_guess=Trajectories(situation_init=situation_init)
@@ -67,7 +67,7 @@ energy=Energy(domain=domain, radial_func=RadialFuncInBall(), epsilon=epsilon, ti
 optimal_trajectories=energy.minimize(initial_guess=initial_guess, center=center, nb_steps=2**nb_double, steps_global= 2**nb_double, mode='double_middle', nb_procs=30, error=1e-8)
 
 
-root="article_{}p_con_5".format(nb_players)
+root="Trajectories_convex"
 optimal_trajectories.display_trajectories(root=root, domain=domain, radial_func=radial_func)
 print("results stored in ",root)
 
