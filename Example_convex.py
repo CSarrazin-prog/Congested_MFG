@@ -15,7 +15,7 @@ domain.add_box([-1,-1], [10, 10])
 
 point_infinity_1 = np.array([10, 6])
 center_circ=[6,6]
-smoothing=0.01
+smoothing=0.01 
 def potential_circ(x):
     radius=x-center_circ
     smoothed=np.sum(radius**2)
@@ -45,8 +45,8 @@ radial_func=RadialFuncInBall()
 center=None
 
 
-X,Y = np.meshgrid(np.linspace(0,3.5,nb_players_x),
-                  np.linspace(0,3.5,nb_players_y))
+X,Y = np.meshgrid(np.linspace(0,4,nb_players_x),
+                  np.linspace(0,4,nb_players_y))
 positions_init = np.zeros((nb_players,2))
 positions_init[:,0] = X.flatten()
 positions_init[:,1] = Y.flatten() 
